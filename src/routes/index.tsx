@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { LimeSqueeze } from "@/components/LimeSqueeze";
+import limeHero from "@/assets/lime-hero.png";
 import adblockerPreview from "@/assets/adblocker-preview.jpg";
 import safeguardPreview from "@/assets/safeguard-preview.jpg";
 
@@ -96,8 +96,14 @@ function Index() {
       <header className="relative px-6 md:px-8 pt-10 md:pt-20 pb-28 md:pb-40 overflow-hidden">
         <div className="relative max-w-7xl mx-auto">
           {/* Floating lime — sits in front of the headline for depth */}
-          <div className="pointer-events-none absolute z-20 -top-6 right-[-2%] w-[54vw] max-w-[540px] hidden lg:block">
-            <LimeSqueeze className="w-full" />
+          <div className="pointer-events-none absolute z-20 -top-6 right-[-2%] w-[54vw] max-w-[540px] hidden lg:block animate-[float_9s_ease-in-out_infinite]">
+            <img
+              src={limeHero}
+              alt="A freshly cut lime half with juice droplets"
+              width={1024}
+              height={1024}
+              className="w-full object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.85)]"
+            />
           </div>
 
 
@@ -115,7 +121,13 @@ function Index() {
 
             {/* Mobile lime */}
             <div className="lg:hidden my-10 mx-auto w-64">
-              <LimeSqueeze className="w-full" />
+              <img
+                src={limeHero}
+                alt="A freshly cut lime half with juice droplets"
+                width={1024}
+                height={1024}
+                className="w-full object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.85)]"
+              />
             </div>
 
             <p className="max-w-xl mx-auto lg:mx-0 text-muted-foreground text-lg md:text-xl leading-relaxed">
