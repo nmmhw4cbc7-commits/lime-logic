@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import limeHero from "@/assets/lime-hero.png";
+import { LimeSqueeze } from "@/components/LimeSqueeze";
 import adblockerPreview from "@/assets/adblocker-preview.jpg";
 import safeguardPreview from "@/assets/safeguard-preview.jpg";
 
@@ -114,16 +115,8 @@ function Index() {
             </h1>
 
             {/* Mobile lime */}
-            <div className="relative lg:hidden my-10 mx-auto w-64">
-              <div className="absolute inset-[15%] rounded-full bg-lime/25 blur-[70px]"></div>
-              <img
-                src={limeHero}
-                alt="A freshly cut lime half with juice droplets splashing"
-                width={1024}
-                height={1024}
-                loading="lazy"
-                className="relative w-full drop-shadow-[0_30px_60px_rgba(0,0,0,0.8)]"
-              />
+            <div className="lg:hidden my-10 mx-auto w-64">
+              <LimeSqueeze className="w-full" />
             </div>
 
             <p className="max-w-xl mx-auto lg:mx-0 text-muted-foreground text-lg md:text-xl leading-relaxed">
