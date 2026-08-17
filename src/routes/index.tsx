@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import limeHero from "@/assets/lime-hero.jpg";
 import adblockerPreview from "@/assets/adblocker-preview.jpg";
 import safeguardPreview from "@/assets/safeguard-preview.jpg";
 
