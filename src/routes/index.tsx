@@ -93,9 +93,21 @@ function Index() {
       </nav>
 
       {/* Hero */}
-      <header className="relative px-6 md:px-8 pt-10 md:pt-16 pb-24 md:pb-32 overflow-hidden">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.05fr_0.95fr] gap-14 lg:gap-10 items-center">
-          <div className="text-center lg:text-left">
+      <header className="relative px-6 md:px-8 pt-10 md:pt-20 pb-28 md:pb-40 overflow-hidden">
+        <div className="relative max-w-7xl mx-auto">
+          {/* Floating lime — sits in front of the headline for depth */}
+          <div className="pointer-events-none absolute z-20 -top-10 right-[-8%] w-[62vw] max-w-[560px] hidden lg:block">
+            <div className="absolute inset-[12%] rounded-full bg-lime/25 blur-[100px]"></div>
+            <img
+              src={limeHero}
+              alt="A freshly cut lime half with juice droplets splashing"
+              width={1024}
+              height={1024}
+              className="relative w-full drop-shadow-[0_40px_80px_rgba(0,0,0,0.85)] animate-[float_9s_ease-in-out_infinite]"
+            />
+          </div>
+
+          <div className="relative z-10 max-w-3xl text-center lg:text-left">
             <div className="inline-flex items-center gap-2 mb-8 rounded-full border border-border bg-surface-card/50 px-3 py-1 text-[11px] font-medium uppercase tracking-widest text-muted-foreground">
               <span className="size-1.5 rounded-full bg-lime animate-pulse"></span>
               Collection 01 — Available Now
@@ -106,6 +118,20 @@ function Index() {
                 WITHOUT THE PULP.
               </span>
             </h1>
+
+            {/* Mobile lime */}
+            <div className="relative lg:hidden my-10 mx-auto w-64">
+              <div className="absolute inset-[15%] rounded-full bg-lime/25 blur-[70px]"></div>
+              <img
+                src={limeHero}
+                alt="A freshly cut lime half with juice droplets splashing"
+                width={1024}
+                height={1024}
+                loading="lazy"
+                className="relative w-full drop-shadow-[0_30px_60px_rgba(0,0,0,0.8)]"
+              />
+            </div>
+
             <p className="max-w-xl mx-auto lg:mx-0 text-muted-foreground text-lg md:text-xl leading-relaxed">
               Lime Logic is a suite of hyper-focused tools designed to reclaim
               your digital sovereignty. Fast, transparent, and undeniably fresh.
@@ -127,20 +153,8 @@ function Index() {
               </a>
             </div>
           </div>
-
-          {/* Lime visual */}
-          <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
-            <div className="absolute inset-6 rounded-full bg-lime/25 blur-[90px]"></div>
-            <img
-              src={limeHero}
-              alt="A freshly cut lime half with juice droplets splashing on a black background"
-              width={1024}
-              height={1024}
-              className="relative w-full aspect-square object-cover rounded-[2.5rem] border border-lime/15 [mask-image:radial-gradient(circle_at_50%_50%,black_58%,transparent_78%)]"
-            />
-            <div className="pointer-events-none absolute inset-0 rounded-[2.5rem] mix-blend-overlay bg-gradient-to-tr from-transparent via-transparent to-lime/25"></div>
-          </div>
         </div>
+
 
         {/* Ambient glow */}
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[420px] bg-lime/10 blur-[130px] -z-10 rounded-full pointer-events-none"></div>
