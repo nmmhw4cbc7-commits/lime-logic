@@ -97,15 +97,9 @@ function Index() {
         <div className="relative max-w-7xl mx-auto">
           {/* Floating lime — sits in front of the headline for depth */}
           <div className="pointer-events-none absolute z-20 -top-6 right-[-2%] w-[54vw] max-w-[540px] hidden lg:block">
-            <div className="absolute inset-[12%] rounded-full bg-lime/25 blur-[100px]"></div>
-            <img
-              src={limeHero}
-              alt="A freshly cut lime half with juice droplets splashing"
-              width={1024}
-              height={1024}
-              className="relative w-full drop-shadow-[0_40px_80px_rgba(0,0,0,0.85)] animate-[float_9s_ease-in-out_infinite]"
-            />
+            <LimeSqueeze className="w-full" />
           </div>
+
 
           <div className="relative z-10 max-w-3xl text-center lg:text-left">
             <div className="inline-flex items-center gap-2 mb-8 rounded-full border border-border bg-surface-card/50 px-3 py-1 text-[11px] font-medium uppercase tracking-widest text-muted-foreground">
