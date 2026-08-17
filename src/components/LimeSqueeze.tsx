@@ -48,7 +48,7 @@ export function LimeSqueeze({ className = "" }: { className?: string }) {
 
   return (
     <div
-      className={`relative aspect-square ${className}`}
+      className={`relative aspect-square [container-type:size] ${className}`}
       data-play={play ? "true" : "false"}
     >
       {/* glow */}
@@ -90,8 +90,8 @@ export function LimeSqueeze({ className = "" }: { className?: string }) {
                 top: `${d.y}%`,
                 width: `${d.size}px`,
                 height: `${d.size * 1.25}px`,
-                "--tx": `${d.tx}%`,
-                "--ty": `${d.ty}%`,
+                "--tx": `${d.tx}cqw`,
+                "--ty": `${d.ty}cqw`,
                 "--dur": `${d.duration + 1.6}s`,
                 "--delay": `${d.delay}s`,
               } as React.CSSProperties
