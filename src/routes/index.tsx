@@ -96,7 +96,7 @@ function Index() {
       <header className="relative px-6 md:px-8 pt-10 md:pt-20 pb-28 md:pb-40 overflow-hidden">
         <div className="relative max-w-7xl mx-auto">
           {/* Floating lime — sits in front of the headline for depth */}
-          <div className="pointer-events-none absolute z-20 -top-10 right-[-8%] w-[62vw] max-w-[560px] hidden lg:block">
+          <div className="pointer-events-none absolute z-20 -top-6 right-[-2%] w-[54vw] max-w-[540px] hidden lg:block">
             <div className="absolute inset-[12%] rounded-full bg-lime/25 blur-[100px]"></div>
             <img
               src={limeHero}
