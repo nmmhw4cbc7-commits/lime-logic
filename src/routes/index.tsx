@@ -121,7 +121,13 @@ function Index() {
 
             {/* Mobile lime */}
             <div className="lg:hidden my-10 mx-auto w-64">
-              <LimeSqueeze className="w-full" />
+              <img
+                src={limeHero}
+                alt="A freshly cut lime half with juice droplets"
+                width={1024}
+                height={1024}
+                className="w-full object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.85)]"
+              />
             </div>
 
             <p className="max-w-xl mx-auto lg:mx-0 text-muted-foreground text-lg md:text-xl leading-relaxed">
