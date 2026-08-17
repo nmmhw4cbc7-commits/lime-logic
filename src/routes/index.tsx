@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import limeHero from "@/assets/lime-hero.jpg";
 import adblockerPreview from "@/assets/adblocker-preview.jpg";
 import safeguardPreview from "@/assets/safeguard-preview.jpg";
 
@@ -48,7 +49,13 @@ const pipeline = [
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans">
+    <div className="relative min-h-screen bg-background text-foreground font-sans overflow-x-hidden">
+      {/* Subtle grid backdrop */}
+      <div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 -z-20 opacity-[0.35] [background-image:linear-gradient(to_right,rgba(255,255,255,0.045)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.045)_1px,transparent_1px)] [background-size:64px_64px] [mask-image:radial-gradient(ellipse_at_50%_0%,black,transparent_75%)]"
+      ></div>
+
       {/* Navigation */}
       <nav className="flex items-center justify-between px-6 md:px-8 py-6 md:py-8 max-w-7xl mx-auto">
         <div className="flex items-center gap-2">
@@ -86,41 +93,59 @@ function Index() {
       </nav>
 
       {/* Hero */}
-      <header className="relative pt-16 md:pt-24 pb-24 md:pb-32 px-6 md:px-8 overflow-hidden">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 mb-8 rounded-full border border-border bg-surface-card/50 px-3 py-1 text-[11px] font-medium uppercase tracking-widest text-muted-foreground">
-            <span className="size-1.5 rounded-full bg-lime"></span>
-            Collection 01 — Available Now
+      <header className="relative px-6 md:px-8 pt-10 md:pt-16 pb-24 md:pb-32 overflow-hidden">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.05fr_0.95fr] gap-14 lg:gap-10 items-center">
+          <div className="text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 mb-8 rounded-full border border-border bg-surface-card/50 px-3 py-1 text-[11px] font-medium uppercase tracking-widest text-muted-foreground">
+              <span className="size-1.5 rounded-full bg-lime animate-pulse"></span>
+              Collection 01 — Available Now
+            </div>
+            <h1 className="font-display font-extrabold text-5xl sm:text-6xl md:text-7xl xl:text-8xl tracking-tighter mb-8 leading-[0.88]">
+              DIGITAL UTILITY <br />
+              <span className="bg-gradient-to-br from-lime via-lime to-lime/50 bg-clip-text text-transparent">
+                WITHOUT THE PULP.
+              </span>
+            </h1>
+            <p className="max-w-xl mx-auto lg:mx-0 text-muted-foreground text-lg md:text-xl leading-relaxed">
+              Lime Logic is a suite of hyper-focused tools designed to reclaim
+              your digital sovereignty. Fast, transparent, and undeniably fresh.
+            </p>
+            <div className="mt-12 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+              <a
+                href="#ecosystem"
+                className="px-8 py-4 bg-lime text-lime-foreground font-bold rounded-xl shadow-[0_0_40px_-8px] shadow-lime/50 hover:scale-[1.02] active:scale-[0.98] transition-transform"
+              >
+                Explore the suite
+              </a>
+              <a
+                href={GITHUB_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="px-8 py-4 border border-border font-bold rounded-xl hover:bg-surface-card transition-all"
+              >
+                View source
+              </a>
+            </div>
           </div>
-          <h1 className="font-display font-extrabold text-5xl sm:text-6xl md:text-8xl tracking-tighter mb-8 leading-[0.9]">
-            DIGITAL UTILITY <br />
-            <span className="text-lime">WITHOUT THE PULP.</span>
-          </h1>
-          <p className="max-w-2xl mx-auto text-muted-foreground text-lg md:text-xl leading-relaxed">
-            Lime Logic is a suite of hyper-focused tools designed to reclaim
-            your digital sovereignty. Fast, transparent, and undeniably fresh.
-          </p>
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="#ecosystem"
-              className="px-8 py-4 bg-lime text-lime-foreground font-bold rounded-xl hover:scale-[1.02] active:scale-[0.98] transition-transform"
-            >
-              Explore the suite
-            </a>
-            <a
-              href={GITHUB_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="px-8 py-4 border border-border font-bold rounded-xl hover:bg-surface-card transition-all"
-            >
-              View source
-            </a>
+
+          {/* Lime visual */}
+          <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
+            <div className="absolute inset-6 rounded-full bg-lime/25 blur-[90px]"></div>
+            <img
+              src={limeHero}
+              alt="A freshly cut lime half with juice droplets splashing on a black background"
+              width={1024}
+              height={1024}
+              className="relative w-full aspect-square object-cover rounded-[2.5rem] border border-lime/15 [mask-image:radial-gradient(circle_at_50%_50%,black_58%,transparent_78%)]"
+            />
+            <div className="pointer-events-none absolute inset-0 rounded-[2.5rem] mix-blend-overlay bg-gradient-to-tr from-transparent via-transparent to-lime/25"></div>
           </div>
         </div>
 
         {/* Ambient glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-lime/10 blur-[120px] -z-10 rounded-full pointer-events-none"></div>
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[420px] bg-lime/10 blur-[130px] -z-10 rounded-full pointer-events-none"></div>
       </header>
+
 
       {/* Product Grid */}
       <main id="ecosystem" className="max-w-7xl mx-auto px-6 md:px-8 pb-24 md:pb-32">
