@@ -49,7 +49,13 @@ const pipeline = [
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans">
+    <div className="relative min-h-screen bg-background text-foreground font-sans overflow-x-hidden">
+      {/* Subtle grid backdrop */}
+      <div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 -z-20 opacity-[0.35] [background-image:linear-gradient(to_right,rgba(255,255,255,0.045)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.045)_1px,transparent_1px)] [background-size:64px_64px] [mask-image:radial-gradient(ellipse_at_50%_0%,black,transparent_75%)]"
+      ></div>
+
       {/* Navigation */}
       <nav className="flex items-center justify-between px-6 md:px-8 py-6 md:py-8 max-w-7xl mx-auto">
         <div className="flex items-center gap-2">
